@@ -36,7 +36,7 @@ char* mqttUser = "<USER>";
 char* mqttPassword = "<PASSWORD>";
 char* clientname = "<CLIENTNAME>";
 
-//Number of counts from closed to open
+//Number of counts from open to closed
 int doorCounts = 4950;
 
 int topPosition = 97;
