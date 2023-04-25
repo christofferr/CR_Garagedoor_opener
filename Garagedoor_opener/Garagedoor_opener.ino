@@ -233,7 +233,7 @@ void loop() {
 
   encAval = digitalRead(encApin);
   encBval = digitalRead(encBpin);
-  encChecks();
+  encReading();
 
 
   publishMQTT();
@@ -247,7 +247,7 @@ void pulseReset() {
   }
 }
 
-void encChecks() { 
+void encReading() { 
   if (encAval != encAprev and encAval == 1)
   {
     turning();
