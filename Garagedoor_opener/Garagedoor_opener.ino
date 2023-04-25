@@ -77,16 +77,6 @@ int lastTransmit = 0;
 WiFiClient espClient;
 PubSubClient client(espClient);
 
-void turning() {
-  if (encBval == 0 and encCounter < 15000)
-  {
-    encCounter = encCounter + 1;
-  }
-  if (encBval == 1 and encCounter > 9999)
-  {
-    encCounter = encCounter - 1;
-  }
-}
 
 void callback(char* topic, byte* payload, unsigned int length) {
   String payloadS;
@@ -257,6 +247,17 @@ void encReading() {
   if (encAval != encAprev)
   {
     encAprev = encAval;
+  }
+}
+
+void turning() {
+  if (encBval == 0 and encCounter < 15000)
+  {
+    encCounter = encCounter + 1;
+  }
+  if (encBval == 1 and encCounter > 9999)
+  {
+    encCounter = encCounter - 1;
   }
 }
 
